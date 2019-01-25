@@ -28,7 +28,7 @@
             </tr>
         </thead>
         <tbody>
-        {% with Total_Charges=sum_product_charge.charge__sum|add:sum_service_charge.service_charge__sum %}
+        {% with Total_Charges=sum_product_charge.charge__sum|addition:sum_service_charge.service_charge__sum %}
             <tr>
                 <td>{{ Total_Charges|floatformat:2 |intcomma }}</td>
 
@@ -118,7 +118,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ sum_product_charge.charge__sum|floatformat:2 |intcomma }}</td>
+                <td>{{ sum_product_charge.charge__sum |floatformat:2 |intcomma }}</td>
 
             </tr>
         </tbody>
